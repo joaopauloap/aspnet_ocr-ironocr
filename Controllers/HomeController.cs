@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Hosting.Server;
-using Microsoft.AspNetCore.Mvc;
-using System.Drawing;
-using ProjetoOCR.Models;
-using System.Diagnostics;
-using System;
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Diagnostics;
 using IronOcr;
+using Microsoft.AspNetCore.Mvc;
+using ProjetoOCR.Models;
 
 namespace ProjetoOCR.Controllers
 {
@@ -13,8 +9,8 @@ namespace ProjetoOCR.Controllers
     {
         public static byte[] GetBytes(IFormFile formFile)
         {
-            using var memoryStream = new MemoryStream();
-            formFile.CopyToAsync(memoryStream);
+            using MemoryStream memoryStream = new();
+            _ = formFile.CopyToAsync(memoryStream);
             return memoryStream.ToArray();
         }
     }
@@ -36,13 +32,15 @@ namespace ProjetoOCR.Controllers
         [HttpPost]
         public IActionResult CarregarAnexo(IFormFile anexo)
         {
-            var file = FormFileExtensions.GetBytes(anexo);
-            var Ocr = new IronTesseract();
-            Ocr.Language = OcrLanguage.PortugueseBest;
-            using (var input = new OcrInput(file))
+            byte[] file = FormFileExtensions.GetBytes(anexo);
+            IronTesseract Ocr = new()
+            {
+                Language = OcrLanguage.PortugueseBest
+            };
+            using (OcrInput input = new(file))
             {
                 //input.AddPdf("example.pdf", "password");
-                var Result = Ocr.Read(input);
+                OcrResult Result = Ocr.Read(input);
                 Console.WriteLine(Result.Text);
                 Console.WriteLine($"{Result.Pages.Count()} Pages");
                 TempData["text"] = Result.Text;

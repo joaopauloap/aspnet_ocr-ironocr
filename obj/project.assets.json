@@ -212,19 +212,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jporto\\.nuget\\packages\\": {}
+    "C:\\Users\\tsantiago\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jporto\\Desktop\\IronOCR\\ProjetoOCR.csproj",
+      "projectUniqueName": "C:\\GIT\\ironocrdotnet\\ProjetoOCR.csproj",
       "projectName": "ProjetoOCR",
-      "projectPath": "C:\\Users\\jporto\\Desktop\\IronOCR\\ProjetoOCR.csproj",
-      "packagesPath": "C:\\Users\\jporto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jporto\\Desktop\\IronOCR\\obj\\",
+      "projectPath": "C:\\GIT\\ironocrdotnet\\ProjetoOCR.csproj",
+      "packagesPath": "C:\\Users\\tsantiago\\.nuget\\packages\\",
+      "outputPath": "C:\\GIT\\ironocrdotnet\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jporto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tsantiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -274,7 +279,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200-preview.22628.1\\RuntimeIdentifierGraph.json"
       }
     }
   }
